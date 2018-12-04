@@ -13,7 +13,7 @@
         android:layout_margin="5dp"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:text="离在线语音合成"
+        android:text="在线语音合成播放"
         android:textSize="16sp" />
 
     <Button

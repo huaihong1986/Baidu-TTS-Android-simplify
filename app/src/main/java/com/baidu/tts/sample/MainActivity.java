@@ -1,6 +1,7 @@
 package com.baidu.tts.sample;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.baidu.tts.sample.baidutextspeech.TextToSpeechPresenter;
+
 import java.util.ArrayList;
 
 /**
@@ -18,11 +21,15 @@ import java.util.ArrayList;
  * SaveFileActivity 保存合成后的音频
  */
 public class MainActivity extends AppCompatActivity {
+    public static final String CANCELNOTE = "你有一个订单已取消，请注意查收";
+    private Context context;
+    private TextToSpeechPresenter textToSpeechPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        context = this;
         initButtons();
         initPermission();
     }
@@ -35,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startAct(SynthActivity.class);
+//                startAct(SynthActivity.class);
+                if (textToSpeechPresenter == null)
+                    textToSpeechPresenter = new TextToSpeechPresenter(context);
+                textToSpeechPresenter.play(CANCELNOTE);
             }
         }); // 离在线语音合成
         b2.setOnClickListener(new View.OnClickListener() {
