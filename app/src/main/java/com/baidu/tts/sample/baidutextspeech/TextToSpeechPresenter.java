@@ -39,6 +39,7 @@ public class TextToSpeechPresenter {
                 }
 //                优先系统，如果系统失败再科大讯飞
                 try {
+                    ;
                     //其次 系统播放
                     iTextToSpeech = new BaiduTextToSpeech(context);
                     Thread.sleep(3000);//初始化 需要一定的时间

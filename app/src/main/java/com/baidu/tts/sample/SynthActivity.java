@@ -55,7 +55,7 @@ public class SynthActivity extends BaseActivity implements View.OnClickListener 
     // 离线发音选择，VOICE_FEMALE即为离线女声发音。
     // assets目录下bd_etts_common_speech_m15_mand_eng_high_am-mix_v3.0.0_20170505.dat为离线男声模型；
     // assets目录下bd_etts_common_speech_f7_mand_eng_high_am-mix_v3.0.0_20170512.dat为离线女声模型
-    protected String offlineVoice = OfflineResource.VOICE_MALE;
+    protected String offlineVoice = OfflineResource.VOICE_FEMALE;
 
     // ===============初始化参数设置完毕，更多合成参数请至getParams()方法中设置 =================
 

@@ -53,17 +53,17 @@ public class MiniActivity extends AppCompatActivity {
     protected String secretKey = "e72ebb6d43387fc7f85205ca7e6706e2";
 
     // TtsMode.MIX; 离在线融合，在线优先； TtsMode.ONLINE 纯在线； 没有纯离线
-    private TtsMode ttsMode = TtsMode.ONLINE;
+    private TtsMode ttsMode = TtsMode.MIX;
 
     // ================选择TtsMode.ONLINE  不需要设置以下参数; 选择TtsMode.MIX 需要设置下面2个离线资源文件的路径
     private static final String TEMP_DIR = "/sdcard/baiduTTS"; // 重要！请手动将assets目录下的3个dat 文件复制到该目录
 
     // 请确保该PATH下有这个文件
-    private static final String TEXT_FILENAME = TEMP_DIR + "/" + "bd_etts_text.dat";
+    public static final String TEXT_FILENAME = TEMP_DIR + "/" + "bd_etts_text.dat";
 
-    // 请确保该PATH下有这个文件 ，m15是离线男声
-    private static final String MODEL_FILENAME =
-            TEMP_DIR + "/" + "bd_etts_common_speech_m15_mand_eng_high_am-mix_v3.0.0_20170505.dat";
+    // 请确保该PATH下有这个文件 ，f7是离线女声
+    public static final String MODEL_FILENAME =
+            TEMP_DIR + "/" + "bd_etts_common_speech_f7_mand_eng_high_am-mix_v3.0.0_20170512.dat";
 
     // ===============初始化参数设置完毕，更多合成参数请至getParams()方法中设置 =================
 

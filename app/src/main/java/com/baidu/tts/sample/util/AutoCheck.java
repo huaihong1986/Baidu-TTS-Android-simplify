@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
 
@@ -87,12 +88,14 @@ public class AutoCheck {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
+
                 AutoCheck obj = innerCheck(initConfig);
                 isFinished = true;
                 synchronized (obj) { // 偶发，同步线程信息
                     Message msg = handler.obtainMessage(100, obj);
                     handler.sendMessage(msg);
                 }
+
             }
         });
         t.start();
